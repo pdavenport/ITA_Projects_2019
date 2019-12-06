@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Your source for all apps RV related!">
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+ <!-- <link rel="favicon" href="https://img.icons8.com/android/24/000000/shopping-cart.png" type="image/png" /> -->
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <title>
+  RV IT Catalog
+</title>
+</head>
+<body>
+    
+    <div class="headfootwrap"> 
+        <div class="flex navbar transition">
+            <a class="rv-logo transition" href="index.html"><img src="assets/rv-header-logo.png"></a>
+            <div class="flex btn-wrap transition">
+                <a href="index.html">HOME</a>
+                <div class="dropdown">
+                    <button class="dropbtn">CATEGORIES
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="products.html">View All</a>
+                        <a href="index.html">Productivity</a>
+                        <a href="index.html">Communication</a>
+                        <a href="index.html">Development</a>
+                        <a href="index.html">Hosting</a>
+                    </div>
+                </div>
+                <a href="search.html">SEARCH</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="attribute.html">ATTRIBUTIONS</a>
+            </div>
+        </div>
+    </div>
+<div class="txtcenter headline">All Products<br>
+    <select name="Categories" id="categorySelector" onchange="prodSort()">
+            <option value="SelectAll">View All</option>
+            <option value="Productivity">Productivity</option>
+            <option value="Communication">Communication</option>
+            <option value="Development">Development</option>
+            <option value="Hosting">Hosting</option>
+          </select>
+        </div><br><br>
+    <!--get request starts here-->
+        <div class="main-col">
+            <div class="featwrap">
+            <div id="getResult1"></div>
+            </div>
+        </div>
+        
+        
+        <div class="footer headfootwrap">
+                <div class="footwrap headfootwrap">
+                    <div class="footbox txtcenter">
+                        Subscribe to our newsletter to hear the latest about new RV arrivals and apps!<br>
+                        <input type="text"><button type="button">Go</button>
+                    </div>
+                    <div class="footbox txtcenter">
+                        <a href="search.html">SEARCH</a><br>
+                        <a href="contact.html">CONTACT US</a><br>
+                        <a href="attribute.html">ATTRIBUTIONS</a><br>
+                    </div>
+                    <div class="footbox txtcenter">
+                        704.971.2300<br>
+                        1101 Red Ventures Dr,<br>
+                        Fort Mill, SC 29707
+                    </div>
+                </div>
+                <div class="footerfooter headfootwrap">copyright info</div>
+            </div>
+            <script src="javascript.js"></script>
+            <script>window.onload=performGetRequest1();</script>
+            </body>
+            </html>

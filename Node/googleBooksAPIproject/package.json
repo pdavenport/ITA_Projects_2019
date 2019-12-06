@@ -1,0 +1,17 @@
+{
+  "name": "assignment-1",
+  "version": "1.0.0",
+  "description": "this is the first udemy assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "app1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "nodemon": "^1.19.4",
+    "sequelize": "^5.21.0"
+  }
+}

@@ -1,0 +1,57 @@
+version: '3.3'
+
+# Define services
+services:
+  # App backend service
+  app-server:
+    # Configuration for building the docker image for the backend service
+    build:
+      context: webappclient
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    restart: always
+    depends_on: 
+      - db # This service depends on mysql. Start that first.
+    networks:
+      - backend
+    tty: true
+
+  app-front:
+    build:
+      context: webappclient/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    restart: always
+    depends_on: 
+      - db
+      - app-server
+    networks:
+      - backend
+    tty: true
+
+  # Database Service (Mysql)
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    restart: always
+    build:
+      context: webappserver
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_ROOT_PASSWORD: passwordfake
+    networks:
+      - backend
+    tty: true
+
+# Volumes
+volumes:
+  db-data:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  backend:
+    driver: "bridge"

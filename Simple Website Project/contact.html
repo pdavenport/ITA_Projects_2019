@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="javascript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact</title>
+</head>
+
+<body>
+    <div class="outerWrapper">
+        <!-- NAVBAR -->
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html">Item 3</a>
+            <a href="index.html">Item 4</a>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="index.html">Link 1</a>
+                    <a href="index.html">Link 2</a>
+                    <a href="index.html">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="innerWrapper">
+            <!-- SIDEBAR -->
+            <div class="sidebar">
+                <h1>Sample Navigation</h1>
+                <p><a href="mailto:pdavenport@redventures.com">Mail me</a></p>
+                <p><a href="http://www.pdavenport.com">My website</a></p>
+            </div>
+            <div class="mainContent">
+                <!-- CONTACT FORM -->
+                <div class="contactMe">
+                    <h1>Not to be creepy but uhh, can you fill this out for no particular reason?</h3>
+                    <form action="/some_page.php" method="get">
+                        <div class="flexForm">
+                            <label for="fname">First Name: </label>
+                            <input type="text" id="fname" name="firstname" placeholder="John">
+                            </div>
+                            <div class="flexForm">
+                            <label for="lname">Last Name: </label>
+                            <input type="text" id="lname" name="lastname" placeholder="Smith">
+                        </div>
+                        <div class="flexForm">
+                            <input type="radio" name="gender" value="male" checked> Male<br>
+                            <input type="radio" name="gender" value="female"> Female<br>
+                            <input type="radio" name="gender" value="lizard"> Lizard Person<br>
+
+                        </div>
+                        <div class="flexForm">
+                            <label for="sport">Favorite Sport: </label>
+                            <select id="sport" name="sport">
+                                <option value="hockey">Hockey</option>
+                                <option value="football">Football</option>
+                                <option value="soccer">Soccer</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="golf">Golf</option>
+                            </select>
+                        </div>
+
+                        <div class="flexForm">
+                            <p>What do you like on your pizza?</p>
+                            <input type="checkbox" id="extraCheese" name="extraCheese"> <label for="extraCheese">Extra Cheese</label>
+                            <input type="checkbox" id="pepperoni" name="pepperoni"> <label for="pepperoni">Pepperoni</label>
+                            <input type="checkbox" id="sausage" name="sausage"> <label for="sausage">Sausage</label>
+                            <input type="checkbox" id="veggies" name="veggies"> <label for="veggies">Veggies</label>
+                            <input type="checkbox" id="disgusting" name="disgusting" onclick="thatsNasty()"> <label for="disgusting">Pineapple</label>
+                        </div>
+                        <div id="nasty" style="display:none"><img src="https://i.imgur.com/vc9i83U.jpg">
+                        </div>
+                        <div class="flexForm">
+                            <input type="submit" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="footer">
+        <div class="outerWrapper">
+            <div class="flexContainer">
+                <div class="flexFootBox">
+                    <p class="footerText">Copyright 2019</p>
+                </div>
+                <div class="flexFootBox">
+                    <p class="footerText"><a href="mailto:pdavenport@redventures.com">Mail me</a></p>
+                </div>
+                <div class="flexFootBox">
+                    <p class="footerText"><a href="http://www.pdavenport.com">My website</a></p>
+                </div>
+                <div class="flexFootBox">
+                    <a href="http://www.instagram.com"><img src="https://i.imgur.com/jkAbski.png" alt="Contact me on IG" width="50" height="50"></a>
+                </div>
+                <div class="flexFootBox">
+                    <a href="http://www.twitter.com"><img src="https://i.imgur.com/2vwgw0t.png" alt="Contact me on Twitter" width="50" height="50"></a>
+                </div>
+                <div class="flexFootBox">
+                    <a href="http://www.facebook.com"><img src="https://i.imgur.com/NJxTDxg.png" alt="Contact me on Facebook" width="50" height="50"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
