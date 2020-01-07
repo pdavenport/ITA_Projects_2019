@@ -21,14 +21,19 @@ var port = "8080"
 func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
-// database/sql package tells us we need to tell GO what our db connections are going to be.
+
+// We want to open(define) a connection once and then reference that connection whenever we need it instead of opening multiple connections.
 // http://go-database-sql.org/accessing.html
-// What is a database object?
+// a quick note about sql.DB:
 // https://github.com/go-sql-driver/mysql/wiki/Examples
-// handle for a database = our *sql.DB
+// Basically, what Go does is store the connection we'll define with sql.Open() as a "database object", in a struct 'DB' of type sql
+// so the connection we get is stored in sql.DB (https://golang.org/search?q=DB)
+
+// var db sql.DB
+
 // So why can't we use 'var db sql.DB'?
-// pool (multiple memory addresses) = potential energy
-// According to database/sql :
+
+// According to database/sql:
 // "The first actual connection to the underlying datastore will be established lazily, when it’s needed for the first time."
 // https://goinbigdata.com/golang-pass-by-pointer-vs-pass-by-value/
 // so when you pass by value, you're copying the entire db pool and opening connections everytime you call it, creating lots of left open and redundant connections
