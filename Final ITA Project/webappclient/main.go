@@ -18,7 +18,7 @@ import (
 var port = "8080"
 
 // We need to enable cors because we're making a request to a 'third party' (our database) for information. So we'll make a function that can add this to the headers whenever needed.
-func enableCors(w *http.ResponseWriter) {
+func enableCors(w *http.ResponseWriter) { // cross origin resource sharing
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
@@ -70,7 +70,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	//assign the database connection we created to the global variable db (sql.DB is actually a struct)
+	//assign the database connection we created to the global variable db
 	db = database
 
 	//Always close your connection with a defer right after opening. Defer will run the db.Close when the function main() completes.
